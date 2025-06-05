@@ -1,0 +1,194 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(255, 200, 253);
+    margin: 0px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(necessary_extra_file/birthday_background_img.avif) no-repeat center center;
+    background-size: cover;
+    opacity: 0.7; /* Adjust transparency: 0.0 (fully transparent) to 1.0 (fully opaque) */
+    z-index: -1; /* Push behind content */
+    pointer-events: none; /* So it doesn't block clicks */
+}
+
+.birthdaycard{
+    position: relative;
+    width: 370px;
+    height: 450px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+    border-radius: 20px;
+}
+/* below code is only for children to make card radius adjustable */
+
+.cardfront,
+.cardinside {
+  border-radius: 20px;
+}
+
+.birthdaycard:hover{
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.5);
+}
+.birthdaycard:hover .cardfront{
+    transform: rotatey(-160deg);
+}
+.birthdaycard:hover .happy{
+    visibility: hidden;
+}
+.cardfront{
+    position: relative;
+    background-color: rgb(255, 208, 148);
+    width: 370px;
+    height: 450px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2), 30px 0 50px rgba(0,0,0,0.4);
+    transition: 1s;
+}
+.happy{
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+    margin: 30px;
+    background-image: linear-gradient(120deg,#ffd856 0%, #f98c6e 100%);
+    /* transition: 0.2s; */
+    transition: opacity 0.3s ease 0.5s, visibility 0s linear 0.5s;
+    opacity: 1;
+    visibility: visible;
+    border-radius: 25%;
+}
+.baloon{
+    position: absolute;
+    transition: opacity 0.3s ease 0.5s, visibility 0s linear 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+.baloon-1,
+.baloon-2,
+.baloon-3,
+.baloon-4 {
+    position: absolute;
+    width: 125px;
+    height: 165px;
+    border-radius: 50%;
+}
+
+.baloon-1 {
+    background-color: rgba(255,40, 90 ,0.7);
+    left: -2px;
+    top: 50px;
+}
+.baloon-2 {
+    background-color: rgba(9, 215 , 160, 0.7);
+    left: 90px;
+    top: 20px;
+    /* border background-color: rgba(9, 215 , 160, 0.7): solid ; */
+}
+.baloon-3 {
+    background-color: rgb(225, 166, 176);
+    left: 160px;
+    top: 50px;
+}
+.baloon-4 {
+    background-color: rgb(176, 235, 87);
+    left: 250px;
+    top: 30px;
+}
+.baloon-1::before,
+.baloon-2::before,
+.baloon-3::before,
+.baloon-4::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 160px;
+    background-color: red;
+    top: 165px;
+    left: 63px;
+}
+
+/* .baloon-1::after,
+.baloon-2::after,
+.baloon-3::after,
+.baloon-4::after {
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 98px;
+    left: 42px;
+} */
+
+.birthdaycard:hover .baloon{
+    visibility: hidden;
+}
+
+/* To hide Gif before hover but display after hover heheeee */
+.hidden-gif {
+    opacity: 0;
+    visibility: hidden;
+    /* transition: all 0.3s ease-in-out; */
+    /* pointer-events: none; */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    align-content: center;
+    margin-left: 50px;
+    width: 220px;
+    height: 280px;
+}
+  
+.birthdaycard:hover .hidden-gif {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease 0.5s, visibility 0.5s linear 0.5s;
+}
+  
+
+.cardinside {
+    position: absolute;
+    background-color: rgb(206, 133, 38);
+    width: 370px;
+    height: 450px;
+    z-index: -1;
+    left: 0px;
+    top: 0px;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+}
+
+p{
+    font-family: cursive;
+    margin: 25px;
+    color: #333;
+}
+h5{
+    font-family: cursive;
+    margin: 25px;
+    color: #333;
+}
+
+.name {
+    position: absolute;
+    left: 180px;
+    top: 360px;
+    color: #333;
+}
+
+.back {
+    font-family: Tahoma, sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 30px;
+    outline-color: #333
+}

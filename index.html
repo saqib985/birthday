@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div class="split-container">
+        <div class="left-side">
+            <div class="left-panel">
+                <div id="birthday-text">
+                    I have a Surprise<br />for you, Haaniya.
+                    <div id="emoji-wrapper">
+                        <div id="emoji">🎉</div>
+                    </div>
+                </div>
+                <div class="box-row">
+                    <div class="box" id="date-box">
+                        <div id="date">4 June 2005</div>
+                    </div>
+                    <div class="box" id="button-box">
+                        <button id="photo-button">Click here to See 😊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div id="photo-container">
+                <div class="photo-wrapper">
+                    <img src="necessary_extra_file/haaniya.jpeg" alt="Haaniya Photo" id="birthday-photo" />
+                </div>
+                <div class="haha">Haaniya</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="signature">Made with ❤️</div>
+
+    <script>
+        document.getElementById("photo-button").addEventListener("click", function () {
+            window.location.href = "mainn.html"; // Replace with your target page URL
+        });
+
+        document.addEventListener("click", function (event) {
+            if (event.target.tagName === "BUTTON" && event.target.id !== "photo-button") {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        });
+
+        setTimeout(() => {
+            document.body.classList.add("bg-reveal");
+        }, 3000);
+
+    </script>
+</body>
+</html>

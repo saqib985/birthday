@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffcce0;
+    overflow: hidden;
+  }
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+  }
+  
+  .card h1 {
+    color: #d63384;
+    font-size: 1.8em;
+  }
+  
+  #goBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none; /* Removes underline */
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    animation: showBtn 1s forwards;
+    animation-delay: 0.5s;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #goBtn:hover {
+    background-color: #6c3483;
+  }
+  
+  @keyframes showBtn {
+    to {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  
+  .emoji {
+    font-size: 1.2em;
+  }
+  
